@@ -1,6 +1,6 @@
-﻿namespace NWheels.Processing
+﻿namespace NWheels.Processing.Cqrs
 {
-    public interface IServerCommand
+    public interface ICqrsCommand
     {
         int Index { get; set; }
         bool ShouldNotifyCompletion { get; set; }

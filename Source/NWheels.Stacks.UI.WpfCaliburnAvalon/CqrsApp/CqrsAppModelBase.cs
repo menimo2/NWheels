@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using NWheels.Extensions;
 using NWheels.Processing;
+using NWheels.Processing.Cqrs;
 
 namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 {
@@ -59,7 +60,7 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        protected virtual void OnEventReceived(IList<IPushEvent> pushEvents)
+        protected virtual void OnEventReceived(IList<ICqrsEvent> pushEvents)
         {
             foreach (var e in pushEvents)
             {
@@ -116,7 +117,7 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 
         private interface IEventDispatcher
         {
-            void DispatchEvent(IPushEvent e);
+            void DispatchEvent(ICqrsEvent e);
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,7 +152,7 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
         {
             #region Implementation of IEventDispatcher
 
-            public void DispatchEvent(IPushEvent e)
+            public void DispatchEvent(ICqrsEvent e)
             {
                 Handlers((TEvent)e);
             }

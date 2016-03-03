@@ -5,16 +5,18 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using NWheels.Endpoints.Impls.Wcf.Requests;
 using NWheels.Processing;
 using NWheels.Processing.Cqrs;
-using NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp.Requests;
 
-namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
+namespace NWheels.Endpoints.Impls.Wcf
 {
     public static class CqrsApiNames
     {
         public const string Namespace = "NWheels.Cqrs";
     }
+
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
     [ServiceContract(
         Namespace = CqrsApiNames.Namespace,

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
@@ -11,14 +10,12 @@ using System.ServiceModel.Dispatcher;
 using System.Threading;
 using System.Xml;
 using Autofac;
-using Autofac.Core;
-using Autofac.Core.Activators.Reflection;
 using Hapil;
 using NWheels.Extensions;
 using NWheels.Hosting;
 using NWheels.Logging;
 
-namespace NWheels.Endpoints.Core.Wcf
+namespace NWheels.Endpoints.Impls.Wcf
 {
     public class WcfEndpointComponent : LifecycleEventListenerBase
     {

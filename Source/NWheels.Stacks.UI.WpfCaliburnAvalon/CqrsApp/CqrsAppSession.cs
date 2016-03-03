@@ -5,6 +5,7 @@ using System.Threading;
 using Caliburn.Micro;
 using NWheels.Authorization.Core;
 using NWheels.Processing;
+using NWheels.Processing.Cqrs;
 
 namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 {
@@ -35,7 +36,7 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        internal void SendCommand(IServerCommand command, Action<CommandResult> onCompleted, TimeSpan? timeout = null)
+        internal void SendCommand(ICqrsCommand command, Action<CommandResult> onCompleted, TimeSpan? timeout = null)
         {
             command.Index = Interlocked.Increment(ref _commandIndex);
 
@@ -49,11 +50,11 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        private void OnEventsReceived(IList<IPushEvent> events)
+        private void OnEventsReceived(IList<ICqrsEvent> events)
         {
             for (int i = 0; i < events.Count; i++)
             {
-                var completionEvent = events[i] as ICommandProcessedEvent;
+                var completionEvent = events[i] as ICommandCompletionEvent;
 
                 if (completionEvent != null)
                 {

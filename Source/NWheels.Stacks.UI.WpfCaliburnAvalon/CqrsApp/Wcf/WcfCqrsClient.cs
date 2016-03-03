@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NWheels.Processing;
+using NWheels.Processing.Cqrs;
 
 namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp.Wcf
 {
@@ -18,14 +19,14 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp.Wcf
             throw new NotImplementedException();
         }
 
-        public void SendCommands(IList<IServerCommand> commands)
+        public void SendCommands(IList<ICqrsCommand> commands)
         {
             throw new NotImplementedException();
         }
 
         public event Action<CommandResult> Connected;
         public event Action<CommandResult> Disconnected;
-        public event Action<IList<IPushEvent>> EventsReceived;
+        public event Action<IList<ICqrsEvent>> EventsReceived;
 
         #endregion
 

@@ -137,6 +137,7 @@
     <Compile Include="Configuration\Impls\XmlFileConfigurationSource.cs" />
     <Compile Include="Conventions\Core\StaticStringDecorator.cs" />
     <Compile Include="Core\PipelineObjectFactory.cs" />
+    <Compile Include="Endpoints\Impls\Wcf\IWcfCqrsService.cs" />
     <Compile Include="Entities\Core\DatabaseInitializationCheckRegistration.cs" />
     <Compile Include="Entities\UnitOfWorkScopeOption.cs" />
     <Compile Include="Logging\Factories\CallLoggingAspectConvention.cs" />
@@ -144,6 +145,12 @@
     <Compile Include="Logging\LogOptions.cs" />
     <Compile Include="Logging\ThreadLogPersistenceLevel.cs" />
     <Compile Include="Processing\Commands\Impl\CommandActorBase.cs" />
+    <Compile Include="Processing\Cqrs\CqrsCommandStatus.cs" />
+    <Compile Include="Processing\Cqrs\CqrsPromise.cs" />
+    <Compile Include="Processing\Cqrs\CqrsSession.cs" />
+    <Compile Include="Processing\Cqrs\ICqrsClient.cs" />
+    <Compile Include="Processing\Cqrs\ICqrsClientCredentials.cs" />
+    <Compile Include="Processing\Cqrs\ICqrsPromise.cs" />
     <Compile Include="Processing\Documents\Impl\CsvOutputDocumentFormatter.cs" />
     <Compile Include="Processing\Documents\Core\DocumentFormatActor.cs" />
     <Compile Include="Processing\Documents\DocumentFormatRequestType.cs" />
@@ -155,9 +162,9 @@
     <Compile Include="Processing\Documents\DocumentMetadata.cs" />
     <Compile Include="Processing\Documents\Core\IOutputDocumentFormatter.cs" />
     <Compile Include="Processing\DocumentFormattersFeatureLoader.cs" />
-    <Compile Include="Processing\ICommandProcessedEvent.cs" />
-    <Compile Include="Processing\IPushEvent.cs" />
-    <Compile Include="Processing\IServerCommand.cs" />
+    <Compile Include="Processing\Cqrs\ICommandCompletionEvent.cs" />
+    <Compile Include="Processing\Cqrs\ICqrsEvent.cs" />
+    <Compile Include="Processing\Cqrs\ICqrsCommand.cs" />
     <Compile Include="TypeModel\Core\DomainContextMetadataBuilder.cs" />
     <Compile Include="TypeModel\Core\DomainContextMetadataCache.cs" />
     <Compile Include="TypeModel\Core\StorageTypes\DecimalAsInt64StorageType.cs" />
@@ -482,7 +489,7 @@
     <Compile Include="TypeModel\PropertyAccess.cs" />
     <Compile Include="TypeModel\PropertyRole.cs" />
     <Compile Include="Endpoints\AbstractEndpointRegistration.cs" />
-    <Compile Include="Endpoints\Core\Wcf\WcfEndpointComponent.cs" />
+    <Compile Include="Endpoints\Impls\Wcf\WcfEndpointComponent.cs" />
     <Compile Include="Endpoints\IFrameworkEndpointsConfig.cs" />
     <Compile Include="Entities\Core\DataRepositoryBase.cs" />
     <Compile Include="Entities\Core\PascalCaseRelationalMappingConvention.cs" />

@@ -18,7 +18,7 @@ using NWheels.DataObjects;
 using NWheels.DataObjects.Core;
 using NWheels.DataObjects.Core.Conventions;
 using NWheels.Endpoints;
-using NWheels.Endpoints.Core.Wcf;
+using NWheels.Endpoints.Impls.Wcf;
 using NWheels.Entities;
 using NWheels.Entities.Core;
 using NWheels.Entities.Impl;

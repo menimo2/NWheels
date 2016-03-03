@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using NWheels.Processing;
+using NWheels.Processing.Cqrs;
 
 namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 {
@@ -58,7 +59,7 @@ namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        protected void BeginCommand(IServerCommand command, Action<ICommandProcessedEvent> onCompleted = null, TimeSpan? timeout = null)
+        protected void BeginCommand(ICqrsCommand command, Action<ICommandCompletionEvent> onCompleted = null, TimeSpan? timeout = null)
         {
             lock (_sessionSyncRoot)
             {

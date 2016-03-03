@@ -1,9 +1,9 @@
-﻿namespace NWheels.Processing
+﻿namespace NWheels.Processing.Cqrs
 {
-    public interface ICommandProcessedEvent : IPushEvent
+    public interface ICommandCompletionEvent : ICqrsEvent
     {
         int CommandIndex { get; set; }
-        CommandStatus Status { get; set; }
+        CqrsCommandStatus Status { get; set; }
         string FaultCode { get; set; }
         string FaultSubCode { get; set; }
         string FaultReason { get; set; }
@@ -11,11 +11,8 @@
 
     //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public enum CommandStatus
+    public interface ICommandCompletionEvent<TResult> : ICommandCompletionEvent
     {
-        Completed,
-        Failed,
-        TimedOut,
-        Cancelled
+        TResult Result { get; set; }
     }
 }

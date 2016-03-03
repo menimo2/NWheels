@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NWheels.Processing;
-using NWheels.Processing.Cqrs;
 
-namespace NWheels.Stacks.UI.WpfCaliburnAvalon.CqrsApp
+namespace NWheels.Processing.Cqrs
 {
-    public class CommandResult
+    public class CqrsPromise
     {
-        private readonly Action<CommandResult> _onCompleted;
+        private readonly Action<CqrsPromise> _onCompleted;
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
-        internal CommandResult(ICqrsCommand command, Action<CommandResult> onCompleted)
+        internal CqrsPromise(ICqrsCommand command, Action<CqrsPromise> onCompleted)
         {
             Command = command;
             _onCompleted = onCompleted;
